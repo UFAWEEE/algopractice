@@ -4,7 +4,7 @@ import random
 def solve(string):
 	#set dictionary for all the characters of the given string
 	alph = {}
-	#set string variable for the palindrome
+	#set string variables for the palindrome
 	palindrome = ""
 	reflection = ""
 
@@ -31,7 +31,7 @@ def solve(string):
 
 	#create a loop that will consume all the even-times appearing alphabets to form a palindrome
 	while len(alph)-odds > 0:
-		#get a random number within the length of thealphabet set
+		#get a random number within the length of the alphabet set
 		index = random.randint(0,len(alph)-1)
 		#choose the alphabet in the randomly generated index
 		c = list(alph)[index]
@@ -40,14 +40,14 @@ def solve(string):
 			#create a palindrome by adding the chosen alphabet to the end of the left part and the beginning of the right part
 			palindrome = palindrome + c
 			reflection = c + reflection
-			#decrease the alphabet as it is used up to form the palindrome
+			#decrease the frequency of the chosen alphabet as it is used up to form the palindrome
 			alph[c] -= 2
 			#if the alphabet is all used up, delete the alphabet from the available set
 			if alph[c] == 0:
 				del alph[c]
 			
 	
-	#if there is alphabet that appears odd number of times, put it in the middle of the result as its only appropriate place
+	#if there is alphabet that appears odd number of times, put it in the middle of the result as it is its only appropriate place
 	if odds == 1:
 		palindrome = palindrome + oddone + reflection
 	else:
